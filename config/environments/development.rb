@@ -12,7 +12,7 @@ Rails.application.configure do
     user_name:      ENV['SENDMAIL_USERNAME'],
     password:       ENV['SENDMAIL_PASSWORD'],
     domain:         'localhost:3000',
-    address:       'gmail.com',
+    address:       'smtp.gmail.com',
     port:          '587',
     authentication: :plain,
     enable_starttls_auto: true
