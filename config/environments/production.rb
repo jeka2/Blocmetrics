@@ -5,7 +5,7 @@ Rails.application.configure do
     user_name:      ENV['SENDMAIL_USERNAME'],
     password:       ENV['SENDMAIL_PASSWORD'],
     domain:         'powerful-woodland-24589.herokuapp.com',
-    address:       'smtp.gmail.com',
+    address:       'gmail.com',
     port:          '587',
     authentication: :plain,
     enable_starttls_auto: true
