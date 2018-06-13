@@ -1,5 +1,15 @@
 Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'powerful-woodland-24589.herokuapp.com' }
+
+  config.action_mailer.smtp_settings = {
+    user_name:      ENV['SENDMAIL_USERNAME'],
+    password:       ENV['SENDMAIL_PASSWORD'],
+    domain:         'powerful-woodland-24589.herokuapp.com',
+    address:       'smtp.gmail.com',
+    port:          '587',
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
