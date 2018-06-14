@@ -7,8 +7,7 @@ Rails.application.configure do
     domain:         'powerful-woodland-24589.herokuapp.com',
     address:       'smtp.gmail.com',
     port:          '587',
-    authentication: :plain,
-    enable_starttls_auto: true
+    authentication: :plain
   }
   # Settings specified here will take precedence over those in config/application.rb.
 
