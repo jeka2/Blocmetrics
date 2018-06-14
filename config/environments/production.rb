@@ -2,8 +2,8 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'powerful-woodland-24589.herokuapp.com' }
 
   config.action_mailer.smtp_settings = {
-    user_name:      ENV['SENDMAIL_USERNAME'],
-    password:       ENV['SENDMAIL_PASSWORD'],
+    user_name:      ENV['SENDGRID_USERNAME'],
+    password:       ENV['SENDGRID_PASSWORD'],
     domain:         'powerful-woodland-24589.herokuapp.com',
     address:       'smtp.gmail.com',
     port:          '587',
