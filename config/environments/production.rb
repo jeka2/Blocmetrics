@@ -8,6 +8,7 @@ Rails.application.configure do
     address:       'smtp.gmail.com',
     port:          '587',
     authentication: :plain
+    
   }
   # Settings specified here will take precedence over those in config/application.rb.
 
