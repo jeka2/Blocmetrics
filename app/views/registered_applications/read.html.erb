@@ -1,0 +1,11 @@
+<tr>
+  <td><h3>Application name:</h3></td>
+  <td><%= @app.name %></td>
+  <td><h3>Application Url:</h3></td>
+  <td><%= @app.url %></td>
+  <div>
+    <td><%= link_to 'De-Register the Application',  { action: :destroy, id: @app.id }, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-warning" %></td>
+    <br>
+    <td><%= link_to "Return", root_path, class: 'glyphicon glyphicon-circle-arrow-left' %></td>
+  </div>
+<tr>
