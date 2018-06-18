@@ -1,9 +1,13 @@
-<%= link_to "New",  new_registered_application_path %>
+<%= link_to "New",  new_registered_application_path, class: "btn btn-info" %>
 <% @applications.each do |app| %>
     <div class="media">
       <div class="media-body">
         <h4 class="media-heading">
-          <%= link_to app.name, controller: "registered_applications", action: "read", id: app %>
+          <table class="table">
+            <thead>
+              <tr><%= link_to app.name, controller: "registered_applications", action: "read", id: app %></tr>
+            </thead>
+          </table>
         </h4>
       </div>
     </div>

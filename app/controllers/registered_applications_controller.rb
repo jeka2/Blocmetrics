@@ -1,4 +1,5 @@
 class RegisteredApplicationsController < ApplicationController
+  include ApplicationHelper
   def index
     @applications = RegisteredApplication.where(user: current_user)
   end
@@ -13,7 +14,11 @@ class RegisteredApplicationsController < ApplicationController
     if @application.save
       redirect_to registered_applications_path, notice: "The url was registered!"
     else
-      redirect to new, notice: "The url wasn't registered, please try again"
+      flash[:notice] = "The url wasn't registered, please try again: "
+      if @application.errors.any?
+        error_handler(@application)
+      end
+      redirect_to new_registered_application_path
     end
   end
 
