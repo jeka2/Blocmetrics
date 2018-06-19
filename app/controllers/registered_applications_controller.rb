@@ -24,6 +24,9 @@ class RegisteredApplicationsController < ApplicationController
 
   def read
     @app = RegisteredApplication.find(params[:id])
+    @events = @app.events.group_by(&:name)
+    @event_count = @events.count
+
   end
 
   def destroy

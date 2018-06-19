@@ -1,11 +1,33 @@
-<tr>
-  <td><h3>Application name:</h3></td>
-  <td><%= @app.name %></td>
-  <td><h3>Application Url:</h3></td>
-  <td><%= @app.url %></td>
+<% if @event_count != 0 %>
+  <div class="row">
+    <div class="col-md-7">
+      <tr>
+        <td><h3>Application name:</h3></td>
+        <td><%= @app.name %></td>
+        <td><h3>Application Url:</h3></td>
+        <td><%= @app.url %></td>
+      </tr>
+    </div>
+    <div class="col-md-5">
+      <%= "There are #{@event_count} events associated with this application:" %>
+      <ul class="list-unstyled">
+      <% @events.each do |event| %>
+        <li><%=event[0] %><li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+<% else %>
+  <tr>
+    <td><h3>Application name:</h3></td>
+    <td><%= @app.name %></td>
+    <td><h3>Application Url:</h3></td>
+    <td><%= @app.url %></td>
+  </tr>
+<% end %>
+
   <div>
     <td><%= link_to 'De-Register the Application',  { action: :destroy, id: @app.id }, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-warning" %></td>
     <br>
     <td><%= link_to "Return", root_path, class: 'glyphicon glyphicon-circle-arrow-left' %></td>
   </div>
-<tr>

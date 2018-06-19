@@ -22,6 +22,7 @@ gem 'pundit'
 gem 'faker'
 gem 'redcarpet'
 gem 'jquery-ui-rails'
+gem 'valid_url', git: 'git://github.com/jeka2/valid_url.git'
 
 
 group :development, :test do
