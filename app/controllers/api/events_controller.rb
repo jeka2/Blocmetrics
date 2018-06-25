@@ -1,7 +1,7 @@
 class API::EventsController < ApplicationController
   skip_before_action :verify_authenticity_token
   skip_before_action :authenticate_user!
-  before_filter :set_access_control_headers
+  before_action :set_access_control_headers
 
 
   def create
@@ -9,7 +9,7 @@ class API::EventsController < ApplicationController
       if !registered_application
         render json: "Unregistered application", status: :unprocessable_entity
       else
-        @event = registered_application.event.new(event_params)
+        @event = registered_application.events.new(event_params)
 
         if @event.save
           render json: @event, status: :created
@@ -28,7 +28,7 @@ class API::EventsController < ApplicationController
      headers['Access-Control-Allow-Origin'] = '*'
      headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
      headers['Access-Control-Allow-Headers'] = 'Content-Type'
-   end
+  end
 
   private
   def event_params
