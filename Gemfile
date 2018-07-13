@@ -23,7 +23,8 @@ gem 'faker'
 gem 'redcarpet'
 gem 'jquery-ui-rails'
 gem 'valid_url', git: 'git://github.com/jeka2/valid_url.git'
-
+gem 'chartkick'
+gem 'groupdate'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

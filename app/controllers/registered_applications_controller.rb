@@ -22,7 +22,7 @@ class RegisteredApplicationsController < ApplicationController
     end
   end
 
-  def read
+  def show
     @app = RegisteredApplication.find(params[:id])
     @events = @app.events.group_by(&:name)
     @event_count = @events.count

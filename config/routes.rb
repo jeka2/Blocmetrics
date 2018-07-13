@@ -7,8 +7,7 @@ Rails.application.routes.draw do
 
   match '/api/events', to: 'api/events#preflight', via: [:options]
 
-  resources :registered_applications, except: :show
-  get "read/:id", to: "registered_applications#read"
+  resources :registered_applications
 
   root 'registered_applications#index'
 end
